@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html><meta charset='utf-8'>
+<head>
+<title>NestFlow</title>
+<style type='text/css'>@import url(NestFlow.css);
+</style>
+</head>
+<body>
+<div id='infoNest'>Welcome: try 3 4 + 5 *</div>
+<div id='oNest'><h5><i id="editNode" contenteditable="true" spellcheck="false">  </i></h5></div>
+</body>
+<script>
+/*Next, specialization of the DOM, required by all NestFlow modules*/
+infoNest=document.getElementById('infoNest')
+infoStash=''
+oNest=document.getElementById('oNest')
+editNode=document.getElementById('editNode')
+editText=editNode.firstChild
+sel=document.getSelection()
+argStack=[]; parenStack=[]
+conLog=console.log
+makeNode=(tag,html)=>
+{ const node=document.createElement(tag)
+  node.innerHTML=html
+  return node
+}
+makeFlo=()=>
+{ const flo=makeNode('h5','')
+  editText.textContent='  '
+  flo.append(editNode)
+  return flo
+}
+makeNest=()=>
+{ const nest=makeNode('div','')
+  nest.append(makeFlo())
+  return nest
+}
+S=1; N=0; Nd=undefined; Nn=NaN
+No=null; Ns=''; Nt=false
+$=str=>document.querySelector(str)
+$$=str=>document.querySelectorAll(str)
+strToLit=str=>Function('return '+str)()
+</script>
+<script type='module' src='compose.js'></script>
+</html>

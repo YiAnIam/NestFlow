@@ -1,0 +1,135 @@
+
+div /*represents a nested namespace*/
+{ border-radius: .5em;
+  border: .2em solid #ABA;
+  margin: .1em;
+  page-break-inside: avoid;
+}
+div[sel]
+{ background-color: rgb(212, 255, 221);
+}
+
+h5 /*represents a flo*/
+{ color: #A8A;
+  font-size: 1em;
+  line-height: 1.46em;
+  font-weight: normal;
+  background-color:rgb(230, 250, 255);
+  border-radius: .4em;
+  border: .15em solid #4FE;
+  margin: .1em;
+  width: fit-content;
+  display: inline-block;
+}
+h5[skif] {background-color:#FEB;}
+h5[skif='1'] + div
+{ border-radius: 0 .5em .5em 0;;
+  margin-right: 1em;
+  border: .2em solid #E7F;
+}
+h5[skif='0'] + div
+{ border-radius: 0;
+  border: .2em solid #0E9;
+}
+h5[raw] {background-color: #ECF;}
+h5[sel] { background-color: #9FA;}
+
+h6 /*represents the nameProlog to a nest*/
+{ font-size: 1em;
+  line-height: 1.46em;
+  background-color: rgba(100,100,100,.1);
+  border-radius: .4em;
+  border: .13em solid #BEF;
+  margin: .1em;
+}
+
+u /*represents special values, like verb args*/
+{ text-decoration: none;
+}
+
+/*b represents words*/
+b[out^='und'] {color: #9A8;}
+b {border-radius: .3em;}
+b[out^='any'] {color: #9A8;}
+b[out^='ary'] {color: #875;}
+b[out^='num'] {color: #90F;}
+b[out^='obj'] {color: #E50;}
+b[out^='str'] {color: #099;}
+b[out^='vrb']
+{  /*verb used as noun arg*/
+  color: #B0B;
+  font-style: italic; 
+}
+b[out~='fix']
+{ border: solid .12em #EDC;
+  background-color: rgb(180, 255, 250);
+}
+b[out~='var']
+{ border: solid .12em #EDC;
+  background-color: rgb(255, 232, 192);
+}
+b[out~='abv'] /*outName*/
+{ border: solid .12em #EDC;
+  border-top-style: dashed;
+}
+b[out~='sha'] /*shadowing name*/
+{text-shadow: #DCD .1em -.3em;}
+b[at] {font-style: italic;} /*a verb*/
+b[at$='t'] /*Flow terminator:*/
+{ color: #000;
+  text-emphasis: bold;
+}
+b[sel] {background-color: rgb(43, 242, 73);}
+
+[at^='0'] {vertical-align: 0em;}
+[at^='-1'] {vertical-align:-.6em;}
+[at^='-2'] {vertical-align:-1.0em;}
+[at^='-3'] {vertical-align:-1.4em;}
+[at^='-4'] {vertical-align:-1.8em;}
+[at^='-5'] {vertical-align: -2.2em;}
+
+s[at] /*s represents argTies*/
+{ color: #888; /*tied argTie*/
+  font-weight: bold;
+}
+s[at$='.'] /*untied argTie, either 'o' or '|'*/
+{ color: rgb(0, 218, 87);
+  text-decoration:none;
+}
+s[at$='t'] /*Flow terminator: @, @@*/
+{ color: #000;
+  text-decoration: none;
+  text-emphasis: bold;
+}
+s[warn] /*output is vacuous*/
+{ color: rgb(238, 0, 219);
+}
+
+[red]
+{ color: rgb(150, 0, 93);
+  background-color: rgb(255, 210, 250);
+}
+[grn] 
+{ color: rgb(0, 109, 26);
+  background-color: rgb(202, 255, 225);
+}
+
+#infoNest
+{ color: #669;
+  border: 4px double #5BC;
+  text-align: center;
+  margin-bottom: .2em;
+}
+
+#infoNest[sel]{background-color:rgb(255, 255, 240);}
+
+#oNest
+{ white-space: pre-wrap;
+}
+
+#editNode
+{ color:#799;
+  font-weight: normal;
+  background-color:#FD9;
+  white-space: pre-wrap;
+}
